@@ -67,10 +67,11 @@ class Assignment(db.Model):
         assertions.assert_valid(assignment.content is not None, 'assignment with empty content cannot be submitted')
 
         assignment.teacher_id = teacher_id
+        # Change the assignment state to SUBMITTED after submission
+        assignment.state = AssignmentStateEnum.SUBMITTED
         db.session.flush()
 
         return assignment
-
 
     @classmethod
     def mark_grade(cls, _id, grade, auth_principal: AuthPrincipal):
