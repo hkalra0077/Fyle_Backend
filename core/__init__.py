@@ -1,3 +1,4 @@
+# /home/abhigawande/Desktop/fyle/fyle-interview-intern-backend/core/__init__.py
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -13,7 +14,6 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 app.test_client()
 
-
 # this is to enforce fk (not done by default in sqlite3)
 @event.listens_for(Engine, "connect")
 def _set_sqlite_pragma(dbapi_connection, connection_record):
@@ -21,3 +21,14 @@ def _set_sqlite_pragma(dbapi_connection, connection_record):
         cursor = dbapi_connection.cursor()
         cursor.execute("PRAGMA foreign_keys=ON;")
         cursor.close()
+
+# Import and register blueprints
+from core.apis.assignments.student import student_assignments_resources
+from core.apis.assignments.teacher import teacher_assignments_resources
+from core.apis.assignments.principal import principal_assignments_resources
+from core.apis.teachers.principal import principal_teachers_resources
+
+app.register_blueprint(student_assignments_resources, url_prefix='/student')
+app.register_blueprint(teacher_assignments_resources, url_prefix='/teacher')
+app.register_blueprint(principal_assignments_resources, url_prefix='/principal/assignments')
+app.register_blueprint(principal_teachers_resources, url_prefix='/principal/teachers')
