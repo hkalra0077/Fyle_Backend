@@ -8,8 +8,15 @@ from sqlalchemy.exc import IntegrityError
 
 # Remove these lines as they're now in core/__init__.py
 # from core.apis.assignments import student_assignments_resources, teacher_assignments_resources
-# app.register_blueprint(student_assignments_resources, url_prefix='/student')
-# app.register_blueprint(teacher_assignments_resources, url_prefix='/teacher')
+from core.apis.assignments import student_assignments_resources
+from core.apis.assignments import teacher_assignments_resources
+from core.apis.assignments.principal import principal_assignments_resources
+from core.apis.teachers.principal import principal_teachers_resources
+
+app.register_blueprint(student_assignments_resources, url_prefix='/student')
+app.register_blueprint(teacher_assignments_resources, url_prefix='/teacher')
+app.register_blueprint(principal_assignments_resources, url_prefix='/principal/assignments')
+app.register_blueprint(principal_teachers_resources, url_prefix='/principal/teachers')
 
 @app.route('/')
 def ready():
