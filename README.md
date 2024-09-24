@@ -4,7 +4,7 @@ This project is a solution to the Fyle Backend Intern assignment. It includes a 
 
 ## Results
 - I had tested and tried all the Existing as well as missing APIs and given my best to develop them here is the Link where you can check them and review.
-- 
+- https://www.postman.com/abhigawande123/workspace/remote-bricks-apis/collection/36164059-1eaad4af-d47d-4d08-9dc0-0ef68f62bdba?action=share&creator=36164059 
 
 ## Prerequisites
 
