@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        PYTHON_VERSION: 3.8.19
+    ports:
+      - "7755:7755"
+    environment:
+      - FLASK_APP=core/server.py
+      - FLASK_ENV=production
+    volumes:
+      - .:/app
+    command: bash run.sh
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=your_database_name
+      - POSTGRES_USER=your_database_user
+      - POSTGRES_PASSWORD=your_database_password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:

@@ -26,6 +26,7 @@ def list_teachers(p):
     return APIResponse.respond(data=teachers_dump)
 
 
+# POST /principal/assignments/grade
 @principal_resources.route("/assignments/grade", methods=['POST'] , strict_slashes=False)
 @decorators.accept_payload
 @decorators.authenticate_principal
