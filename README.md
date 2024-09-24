@@ -1,29 +1,25 @@
+# Fyle Backend Intern Assignment
 
-### Install requirements
+This project is a solution to the Fyle Backend Intern assignment. It includes a fully functional Flask backend with key features such as assignment submission, grading, and validation states (DRAFT, SUBMITTED, GRADED). The application is designed to be set up locally or run with Docker.
 
-```
-virtualenv env --python=python3.8
-source env/bin/activate
-pip install -r requirements.txt
-```
-### Reset DB
+## Results
+- I had tested and tried all the Existing as well as missing APIs and given my best to develop them here is the Link where you can check them and review.
+- 
 
-```
-export FLASK_APP=core/server.py
-rm core/store.sqlite3
-flask db upgrade -d core/migrations/
-```
-### Start Server
+## Prerequisites
 
-```
-bash run.sh
-```
-### Run Tests
+- Python 3.8 or higher
+- Virtualenv
+- Docker (optional, for containerized setup)
 
-```
-pytest -vvv -s tests/
+## Project Setup
 
-# for test coverage report
-# pytest --cov
-# open htmlcov/index.html
-```
+### Local Setup
+
+#### 1. Fork and Clone the Repository
+
+First, fork this repository to your GitHub account, and then clone the forked repository to your local machine.
+
+```bash
+git clone https://github.com/YOUR_USERNAME/fyle-backend-intern.git
+cd fyle-backend-intern
