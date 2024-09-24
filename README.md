@@ -1,6 +1,7 @@
 # Fyle Backend Intern Assignment
 
-This project is a solution to the Fyle Backend Intern assignment. It includes a fully functional Flask backend with key features such as assignment submission, grading, and validation states (DRAFT, SUBMITTED, GRADED). The application is designed to be set up locally or run with Docker.
+Hereby i had completed the FYLE BACKEND INTERN ASSIGNMENT with my maximum efforts and knowledge and Looking forward for it.
+Thank You.
 
 ## Results
 - I had tested and tried all the Existing as well as missing APIs and given my best to develop them here is the Link where you can check them and review.
