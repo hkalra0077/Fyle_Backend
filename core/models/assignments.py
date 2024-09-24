@@ -78,7 +78,8 @@ class Assignment(db.Model):
         assignment = Assignment.get_by_id(_id)
         assertions.assert_found(assignment, 'No assignment with this id was found')
         assertions.assert_valid(grade is not None, 'assignment with empty grade cannot be graded')
-
+        assertions.assert_valid(assignment.teacher_id == auth_principal.teacher_id,f"Assignment with id: {assignment.id} is not submitted to Teacher with teacher_id: {auth_principal.teacher_id}")
+        # assertions.assert_valid(assignment.state != AssignmentStateEnum.GRADED, f"Teacher cant regrade an assignment.")
         assignment.grade = grade
         assignment.state = AssignmentStateEnum.GRADED
         db.session.flush()
@@ -96,3 +97,20 @@ class Assignment(db.Model):
     @classmethod
     def get_all_submitted_and_graded(cls):
         return cls.filter(cls.state.in_([AssignmentStateEnum.SUBMITTED, AssignmentStateEnum.GRADED])).all()
+    
+    @classmethod
+    def regrade(cls, _id, grade):
+        assignment = Assignment.get_by_id(_id)
+        assertions.assert_found(assignment, f"No assignment with id: {_id} found.")
+        assertions.assert_valid(
+            grade is not None, 'assignment with empty grade cannot be graded')
+        # principal can grade submitted assignments | regrade graded assignments 
+        assertions.assert_valid(assignment.state != AssignmentStateEnum.DRAFT, f"Principal cannot grade assignment in {assignment.state} state.")
+
+        assignment.grade = grade
+        if(assignment.state == AssignmentStateEnum.SUBMITTED):
+            assignment.state = AssignmentStateEnum.GRADED
+        
+        db.session.flush()
+
+        return assignment
