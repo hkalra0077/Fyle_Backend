@@ -1,17 +1,16 @@
-# Fyle Backend Intern Assignment
-
-Hereby i had completed the FYLE BACKEND INTERN ASSIGNMENT with my maximum efforts and knowledge and Looking forward for it.
-Thank You.
+<h1 align="center" style="color:gray">
+ Fyle Backend Intern Assignment
+<br></h1>
+I am Hardik Kalra and I have completed the assignment fulfilling all the requirements for this task.
 
 ## Results
-- I had tested and tried all the Existing as well as missing APIs and given my best to develop them here is the Link where you can check them and review.
-- https://www.postman.com/abhigawande123/workspace/remote-bricks-apis/collection/36164059-1eaad4af-d47d-4d08-9dc0-0ef68f62bdba?action=share&creator=36164059 
-- I had also attached the screenshots of the (pytest --cov & pytest -vvv -s tests/) in the Output folder.
 
-## Note:
-- Whether i will be considered for this position or not but i would like to give an feedback regarding the data in the database schema of the assignment is having some issue.
-    1.The Default STATE of the assignment is set to GRADED and whenever there is some change to do that the tests through an error.So please Take a look at that it will be helpful for other candidates.
-    Please consider redesigning your database schema for this assignments.
+- Studied and Developed all the existing and missing APIs and worked on them as asked.
+- Added Test results for all of the APIs.
+- Incorporated Bugs were idetified and have also been debugged.
+- Dockerized the whole application and added the Dokcer file.
+- Got the coverage report above 90%.
+
 
 ## Prerequisites
 
@@ -19,9 +18,9 @@ Thank You.
 - Virtualenv
 - Docker (optional, for containerized setup)
 
-## Project Setup
+<h2 align="center" style="color:gray"><b>Project Setup</b></h2>
 
-### Local Setup
+<h3 align="center" style="color:gray"><b>Local Setup</b></h3>
 
 ### Install requirements
 
@@ -52,7 +51,7 @@ pytest -vvv -s tests/
 # open htmlcov/index.html
 ```
 
-### Docker Setup
+<h3 align="center" style="color:gray"><b>Docker Setup</b></h3>
 
 ### Build the Docker Image
 
@@ -64,11 +63,9 @@ docker build -t fyle-backend-intern .
 ```
 docker run -p 5000:5000 fyle-backend-intern
 ```
-### Visit Live Server
-
-```
-http://localhost:5000
-```
-
-
+<h3 align="center" style="color:gray">
+⇩  Test coverage  ⇩
+</h3>
+<img src="./coverage/1.png" alt="webpage preview 1">
+<img src="./coverage/2.png" alt="webpage preview 1">
 
