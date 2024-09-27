@@ -67,5 +67,4 @@ docker run -p 5000:5000 fyle-backend-intern
 ⇩  Test coverage  ⇩
 </h3>
 <img src="./coverage/1.png" alt="webpage preview 1">
-<img src="./coverage/2.png" alt="webpage preview 1">
 
